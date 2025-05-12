@@ -47,7 +47,7 @@
         cursor: pointer;
     }
 
-    .btns:hover {
+    .btns:active {
         background-color: rgba(194, 194, 194, 0.425);
         box-shadow: none;
     }
@@ -87,38 +87,65 @@
         display: flex;
         flex-wrap: nowrap;
     }
-    
-    @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
     .container {
-        width: 90%;
-        padding: 15px;
-        height: auto;
+        width: 100vw;
+        height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
     }
 
     #inputbox {
         width: 100%;
-        height: 80px;
-        font-size: 24px;
-        margin: 10px 0;
+        height: 20%;
+        font-size: 40px;
+        margin-bottom: 10px;
+        /* background-color: red; */
     }
 
+    /* ✅ NEW: Wrap all rows in this container */
+    .buttons-container {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 50px 0px;
+        /* background-color: red; */
+    }
+
+    /* ✅ Each row of buttons */
     .box {
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
     }
 
     .btns {
-        width: 20%;
-        height: 50px;
-        margin: 5px 0;
-        font-size: 18px;
+        flex: 1;
+        height: 60px;
+        font-size: 24px;
+        margin: 12px;
+        border-radius: 50px;
+         -webkit-tap-highlight-color: transparent; /* Removes grey/blue highlight on tap */
     }
 }
+
+
 </style>
 
 <body>
     <section class="container">
         <input type="text" placeholder="0" id="inputbox" readonly>
+        <div class="buttons-container">
         <div class="box">
             <button class="btns" id="AC">AC</button>
             <button class="btns" id="DE">DE</button>
@@ -148,6 +175,7 @@
             <button class="btns" value="0">0</button>
             <button class="btns" value=".">.</button>
             <button class="btns" id="equal">=</button>
+        </div>
         </div>
     </section>
     <!-- <script>
