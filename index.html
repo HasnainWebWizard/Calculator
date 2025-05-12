@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="calculator.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+
     <title>Calculator</title>
-    
+
 </head>
 <style>
     * {
@@ -83,99 +86,108 @@
     #add {
         color: rgb(21, 255, 0);
     }
-    .box{
-        display: flex;
-        flex-wrap: nowrap;
-    }
-@media screen and (max-width: 500px) {
-    body {
-        padding: 0;
-        margin: 0;
+
+    #AC {
+        background-image: url(logo.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: transparent;
     }
 
-    .container {
-        width: 100vw;
-        height: 100vh;
-        padding: 20px;
-        box-sizing: border-box;
-        border-radius: 0;
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-    }
-
-    #inputbox {
-        width: 100%;
-        height: 20%;
-        font-size: 40px;
-        margin-bottom: 10px;
-        /* background-color: red; */
-    }
-
-    /* ✅ NEW: Wrap all rows in this container */
-    .buttons-container {
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        margin: 50px 0px;
-        /* background-color: red; */
-    }
-
-    /* ✅ Each row of buttons */
     .box {
         display: flex;
         flex-wrap: nowrap;
-        width: 100%;
     }
 
-    .btns {
-        flex: 1;
-        height: 60px;
-        font-size: 24px;
-        margin: 12px;
-        border-radius: 50px;
-         -webkit-tap-highlight-color: transparent; /* Removes grey/blue highlight on tap */
+    @media screen and (max-width: 500px) {
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+        }
+
+        #inputbox {
+            width: 100%;
+            height: 20%;
+            font-size: 40px;
+            margin-bottom: 10px;
+            /* background-color: red; */
+        }
+
+        /* ✅ NEW: Wrap all rows in this container */
+        .buttons-container {
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin: 50px 0px;
+            /* background-color: red; */
+        }
+
+        /* ✅ Each row of buttons */
+        .box {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+
+        .btns {
+            flex: 1;
+            height: 60px;
+            font-size: 24px;
+            margin: 12px;
+            border-radius: 50px;
+            -webkit-tap-highlight-color: transparent;
+            /* Removes grey/blue highlight on tap */
+        }
     }
-}
-
-
 </style>
 
 <body>
     <section class="container">
         <input type="text" placeholder="0" id="inputbox" readonly>
         <div class="buttons-container">
-        <div class="box">
-            <button class="btns" id="AC">AC</button>
-            <button class="btns" id="DE">DE</button>
-            <button class="btns" id="remainder">%</button>
-            <button class="btns" id="divide">/</button>
-        </div>
-        <div class="box">
-            <button class="btns" value="7">7</button>
-            <button class="btns" value="8">8</button>
-            <button class="btns" value="9">9</button>
-            <button class="btns" value="*"id="multi">*</button>
-        </div>
-        <div class="box">
-            <button class="btns" value="4">4</button>
-            <button class="btns" value="5">5</button>
-            <button class="btns" value="6">6</button>
-            <button class="btns" value="-" id="substract" value="-">-</button>
-        </div>
-        <div class="box">
-            <button class="btns" value="1">1</button>
-            <button class="btns" value="2">2</button>
-            <button class="btns" value="3">3</button>
-            <button class="btns" value="+" id="add">+</button>
-        </div>
-        <div class="box">
-            <button class="btns" value="00">00</button>
-            <button class="btns" value="0">0</button>
-            <button class="btns" value=".">.</button>
-            <button class="btns" id="equal">=</button>
-        </div>
+            <div class="box">
+                <button class="btns" id="AC">AC</button>
+                <button class="btns" id="DE">DE</button>
+                <button class="btns" id="remainder">%</button>
+                <button class="btns" id="divide">/</button>
+            </div>
+            <div class="box">
+                <button class="btns" value="7">7</button>
+                <button class="btns" value="8">8</button>
+                <button class="btns" value="9">9</button>
+                <button class="btns" value="*" id="multi">*</button>
+            </div>
+            <div class="box">
+                <button class="btns" value="4">4</button>
+                <button class="btns" value="5">5</button>
+                <button class="btns" value="6">6</button>
+                <button class="btns" value="-" id="substract" value="-">-</button>
+            </div>
+            <div class="box">
+                <button class="btns" value="1">1</button>
+                <button class="btns" value="2">2</button>
+                <button class="btns" value="3">3</button>
+                <button class="btns" value="+" id="add">+</button>
+            </div>
+            <div class="box">
+                <button class="btns" value="00">00</button>
+                <button class="btns" value="0">0</button>
+                <button class="btns" value=".">.</button>
+                <button class="btns" id="equal">=</button>
+            </div>
         </div>
     </section>
     <!-- <script>
@@ -219,7 +231,7 @@ buttons.forEach(button => {
 });
 </script> -->
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
